@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/menu.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/base/components/menu.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">Foulée</div>
+      <nav class="nav-menu" aria-label="Navigation principale">
+        <!-- Bouton Menu / Fermer -->
+        <button
+          class="nav-menu__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu-list"
+          aria-label="Ouvrir le menu de navigation"
+        >
+          <!-- L'icône doit être positionnée en premier pour le sélecteur CSS adjacent (+) -->
+          <span class="nav-menu__hamburger-icon" aria-hidden="true"></span>
+          <span class="nav-menu__libelle">Menu</span>
+        </button>
+
+        <!-- Liste des liens de navigation -->
+        <ul id="nav-menu-list" class="nav-menu__list">
+          <li class="nav-menu__item">
+            <a href="#home" class="nav-menu__link">Hommes</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#services" class="nav-menu__link">Femmes</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#about" class="nav-menu__link">Enfants</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#contact" class="nav-menu__link">Sport</a>
+          </li>
+          <li class="nav-menu__item">
+            <a href="#personnaliser" class="nav-menu_link">Personnaliser</a>
+          </li>
+        </ul>
+          </nav>
+          <!-- Barre de recherche -->
+        <form role="search" action="zone-de-recherche.html" class="search-form">
+        
+
+        <input
+          type="search"
+          id="search-input"
+          name="q"
+          placeholder="Ex: chaussures de course..."
+          autocomplete="off"
+        />
+
+        <!-- Le bouton de validation obligatoire -->
+        <button type="submit">
+          <!-- L'icône visible -->
+          <svg
+            aria-hidden="true"
+            xmlns="http://w3.org"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <!-- Le texte invisible pour les yeux, mais lu à voix haute -->
+          <span class="sr-only">Rechercher</span>
+        </button>
+      </form>
+      
+    </header>
+    <main>
+      <nav aria-label="Fil d'Ariane" class="breadcrumb">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/chaussures/" aria-current="page">Chaussures</a></li>
+        </ul>
+      </nav>
+    </main>
+
+    <main class="catalog-container">
+      <!-- filtres  -->
+      <section class="catalogue-vitrine">
+        <h1>Chaussures</h1>
+        <ul class="category-badges">
+          <li><button class="badge active">Tous</button></li>
+          <li><button class="badge">Hommes</button></li>
+          <li><button class="badge">Femmes</button></li>
+          <li><button class="badge">Enfants</button></li>
+        </ul>
+      </section>
+
+      <div class="barre-outils">
+      <!-- Bouton masquer -->
+      <button
+        type="button"
+        id="btn-toggle-form"
+        aria-controls="filter-form"
+        aria-expanded="true"
+      >
+        Masquer les filtres
+      </button>
+
+      <div class="barre-tri">
+        <label for="tri">Trier par</label>
+        <select id="tri" name="tri">
+          <option value="nouveautes">Nouveautés</option>
+          <option value="prix-croissant">Prix croissant</option>
+          <option value="prix-decroissant">Prix décroissant</option>
+          <option value="popularite">Popularité</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- Formulaire de filtres -->
+      <form id="filter-form">
+        <fieldset>
+          <legend>Affiner votre recherche</legend>
+
+          <!-- PREMIÈRE LISTE : SPORTS -->
+          <ul class="filter-list">
+            <li class="section-title">Sports</li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-course"
+                name="sport"
+                value="course"
+              />
+              <label for="filter-course">Course</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-basketball"
+                name="sport"
+                value="basketball"
+              />
+              <label for="filter-basketball">BasketBall</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-football"
+                name="sport"
+                value="football"
+              />
+              <label for="filter-football">FootBall</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-training"
+                name="sport"
+                value="training"
+              />
+              <label for="filter-training">Training</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-lifestyle"
+                name="sport"
+                value="lifestyle"
+              />
+              <label for="filter-lifestyle">Lifestyle</label>
+            </li>
+          </ul>
+
+          <!-- DEUXIÈME LISTE : COULEURS -->
+          <ul class="filter-list">
+            <li class="section-title">Couleurs</li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-blanc"
+                name="color"
+                value="blanc"
+              />
+              <label for="filter-blanc">Blanc</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-noir"
+                name="color"
+                value="noir"
+              />
+              <label for="filter-noir">Noir</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-rouge"
+                name="color"
+                value="rouge"
+              />
+              <label for="filter-rouge">Rouge</label>
+            </li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-bleu"
+                name="color"
+                value="bleu"
+              />
+              <label for="filter-bleu">Bleu</label>
+              <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-jaune"
+                name="color"
+                value="jaune"
+              />
+              <label for="filter-rouge">Jaune</label>
+          </ul>
+          <!-- Troisième LISTE : PRIX -->
+          <ul class="filter-list">
+            <li class="section-title">Prix</li>
+            <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-moinsde80$"
+                name="prix"
+                value="moinsde80$"
+              />
+              <label for="filter-course">Moins de 80$</label>
+              <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-80$-120$"
+                name="prix"
+                value="80$-120$"
+              />
+              <label for="filter-course">80$ - 120$</label>
+              <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-120$-180$"
+                name="prix"
+                value="120$-180$"
+              />
+              <label for="filter-course">120$ - 180$</label>
+              <li class="list-option">
+              <input
+                type="checkbox"
+                id="filter-plusde180$"
+                name="prix"
+                value="plusde180$"
+              />
+              <label for="filter-course">Plus de 180 $</label>
+        </fieldset>
+      </form>
+    </main>
+    <!-- Les chaussures -->
+    <section class="catalogue-produits" aria-label="Liste des produits">
+      <ul class="grille-produits">
+
+        
+       <!-- Produit 1 -->
+<li class="carte-produit">
+  <article>
+    <div class="carte-produit__image-container">
+      <span class="carte-produit__badge">Nouveau</span>
+      <img src="" alt="Chaussure Air Force Flyknit grise et blanche" class="carte-produit__image"/>
+    </div>
+
+    <div class="carte-produit__contenu">
+      <p class="carte-produit__genre">Hommes</p>
+      <h2 class="carte-produit__titre">Air Force Flyknit</h2>
+      <p class="carte-produit__couleurs">3 couleurs</p>
+      <p class="carte-produit__prix">129,99 $</p>
+      <button type="button" class="btn-panier" aria-label="Ajouter Air Force Flyknit au panier">
+          Ajouter au panier
+      </button>
+    </div>
+  </article>
+</li>
+
+         <!-- Produit 2 -->
+        <li class="carte-produit">
+            <article>
+                <div class="carte-produit__image-container">
+                    <img src="" alt="Chaussure Air Force Mid Leather blanche" class="carte-produit__image" />
+                </div>
+
+                <div class="carte-produit__contenu">
+                    <p class="carte-produit__genre">Femmes</p>
+                    <h2 class="carte-produit__titre">Air Force Mid Leather</h2>
+                    <p class="carte-produit__couleurs">4 couleurs</p>
+                    <p class="carte-produit__prix">109,99 $</p>
+
+                    <button type="button" class="btn-panier" aria-label="Ajouter Air Force Mid Leather au panier">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </article>
+        </li>
+
+        <!-- Produit 3 -->
+        <li class="carte-produit">
+            <article>
+                <div class="carte-produit__image-container">
+                    <img src="" alt="Chaussure Air Jordan Retro Decon bleue" class="carte-produit__image" />
+                </div>
+
+                <div class="carte-produit__contenu">
+                    <p class="carte-produit__genre">Hommes</p>
+                    <h2 class="carte-produit__titre">Air Jordan Retro Decon</h2>
+                    <p class="carte-produit__couleurs">5 couleurs</p>
+                    <p class="carte-produit__prix">189,99 $</p>
+
+                    <button type="button" class="btn-panier" aria-label="Ajouter Air Jordan Retro Decon au panier">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </article>
+        </li>
+
+    </ul>
+    
+    <!--  Footer  -->
+    <footer class="pied-de-page">
+  <div class="pied-de-page__marque">
+    <p class="pied-de-page__logo">Foulée</p>
+    <p>© 2017 Foulée.<br>Tous droits réservés. 2017.</p>
+  </div>
+
+  <nav aria-label="Liens secondaires">
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#support">Support</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="pied-de-page__info">
+    <p>Foulée est une boutique spécialisée dans la vente de chaussures de sport et de lifestyle. Nous offrons une sélection soigneusement choisie pour hommes, femmes et enfants.</p>
+
+  </div>
+</footer>
+  </body>
+</html>

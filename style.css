@@ -23,6 +23,328 @@
 /* @import url("css/components/modale.css") layer(components); */
 
 /* Temporaire - Pour tester une variable définie dans les settings */
-h1 {
-  color: var(--couleur-principale);
+
+body {
+  font-family: var(--police-principale);
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: white;
+}
+
+.nav-menu__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fafafa;
+}
+
+.nav-menu__list {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: none;
+}
+
+/*--- barre de recherche ---*/
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+}
+
+.search-form input {
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Masquage accessible du formulaire entier */
+.is-hidden {
+  display: none;
+}
+
+/* Style des deux listes */
+.filter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.filter-list li {
+  margin: 8px 0;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.list-option {
+  padding-left: 15px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/* Pour le fil d'ariane */
+/* Conteneur principal */
+.breadcrumb {
+  padding: 10px 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Liste des liens */
+.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap; /* Permet le retour à la ligne sur mobile */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Éléments de la liste */
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+/* Séparateur visuel (ignoré par les lecteurs d'écran) */
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin: 0 12px;
+  color: #a0aec0; /* Gris clair */
+  font-weight: 300;
+}
+
+/* Style des liens cliquables */
+.breadcrumb a {
+  color: #4a5568; /* Gris foncé text */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Effet au survol des liens */
+.breadcrumb a:hover {
+  color: #1a202c; /* Presque noir */
+  text-decoration: underline;
+}
+
+/* Style de la page actuelle (élément actif) */
+.breadcrumb [aria-current="page"] {
+  color: #718096; /* Gris neutre intermédiaire */
+  font-weight: 500;
+  pointer-events: none; /* Désactive le clic sur la page active */
+  text-decoration: none;
+}
+.category-badges {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.badge {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid #000000;
+  background-color: white;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.badge.active {
+  background-color: #000000;
+  color: white;
+}
+
+/* Btn Masquer les filtres */
+.barre-outils {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Filtre  */
+#filter-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.list-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Section produits */
+.grille-produits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.carte-produit {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+}
+
+.carte-produit__image-container {
+  overflow: hidden;
+}
+
+.carte-produit__immage {
+  width: 100%;
+  display: block;
+}
+
+.carte-produit__contenu {
+  padding: 1rem 1.25rem;
+}
+
+.carte-produit__genre {
+  color: #2563eb;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem 0;
+}
+
+.carte-produit__titre {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.35rem;
+}
+
+.carte-produit__couleurs {
+  color: #737373;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+.carte-produit__prix {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.btn-panier {
+  width: 100%;
+  padding: 0.75rem;
+  background: none;
+  border: 1px solid #c2c2c2;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: #737373;
+}
+
+.carte-produit__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carte-produit__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: #000;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.35rem 0.6rem;
+}
+
+/* Footer */
+
+.pied-de-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #000;
+  color: white;
+  padding: 3rem 2rem;
+}
+
+.pied-de-page__logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.pied-de-page nav ul {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.pied-de-page nav a {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.pied-de-page__info {
+  max-width: 340px;
+}
+
+.pied-de-page__info p {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  margin: 0 0 1rem;
 }

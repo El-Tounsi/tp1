@@ -42,8 +42,15 @@ Les utilisateurs doivent être capables de :
 
 ### Ce que j'ai appris
 
+Que les attributs ARIA comme `aria-controls` et `for`/`id` exigent un identifiant unique et non pas une classe
+L'utilité de `<fieldset>`/`<legend>` pour donner du contexte à un groupe de champs liés (comme les filtres), même quand ce contexte est masqué visuellement.
+Que taper du texte en majuscules directement dans le HTML peut nuire à la lecture vocale
+
 ### Développement continu
 
 Pour mes prochains projets, je souhaite approfondir :
 
 ## Auteur
+
+Nom : Ali
+GitHub : [@El-Tounsi]
